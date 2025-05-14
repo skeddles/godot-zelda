@@ -2,6 +2,9 @@ extends State
 
 const DESCEND_SPEED = 15
 
+var target_room
+var target_marker
+
 func start():
 	%Sprite.play("walk_up")
 	pass
@@ -15,6 +18,8 @@ func _process(delta):
 	
 	if %Sprite.position.y > 16:
 		player.change_state("Walk")
+		player.world.teleport(target_room, target_marker)
+		
 	
 func center_sprite_horizontally():
 	var current_x = %Sprite.global_position.x

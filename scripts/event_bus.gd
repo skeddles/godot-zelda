@@ -1,3 +1,3 @@
 extends Node
 
-signal door_entered(area: Area2D)
+signal door_entered(door: Door)

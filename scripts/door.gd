@@ -1,4 +1,8 @@
 extends Area2D
+class_name Door
+
+@export var target_room:PackedScene
+@export var target_marker:String = "Entrance"
 
 var overlapping_body: CharacterBody2D = null
 @onready var area_shape: CollisionShape2D = $CollisionShape2D 

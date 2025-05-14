@@ -15,12 +15,20 @@ run/main_scene="uid://bn4336skkdtv1"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*res://scripts/event_bus.gd"
+
 [display]
 
 window/size/viewport_width=256
 window/size/viewport_height=240
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+
+[global_group]
+
+door=""
 
 [input]
 

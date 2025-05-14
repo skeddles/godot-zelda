@@ -90,7 +90,7 @@ size = Vector2(10, 7)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
-[node name="Mask" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 clip_children = 1
 offset_left = -8.0
 offset_top = -14.0
@@ -98,11 +98,11 @@ offset_right = 8.0
 offset_bottom = 2.0
 color = Color(1, 0, 1, 1)
 
-[node name="Sprite" type="AnimatedSprite2D" parent="Mask"]
+[node name="Sprite" type="AnimatedSprite2D" parent="ColorRect"]
 unique_name_in_owner = true
+position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"walk_up"
-centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2.5)
@@ -110,9 +110,9 @@ shape = SubResource("RectangleShape2D_g2els")
 
 [node name="State" type="Node" parent="."]
 
-[node name="Walk" type="Node" parent="State"]
-script = ExtResource("4_dqkch")
-
 [node name="Stairs" type="Node" parent="State"]
-process_mode = 4
 script = ExtResource("3_qhqgy")
+
+[node name="Walk" type="Node" parent="State"]
+process_mode = 4
+script = ExtResource("4_dqkch")

@@ -1,9 +1,8 @@
 extends Node2D
 
-@onready var current_room = $Room
+@onready var current_room = $start
 
 var current_door:Door
-
 const ROOM_POSITION = Vector2(0.0, 48.0)
 
 func _ready():
@@ -12,7 +11,8 @@ func _ready():
 func _on_door_entered(door: Door):
 	current_door = door
 
-func teleport(target_room:PackedScene, targetPositionMarkerName:String):
+func teleport(target_room_path:String, targetPositionNodeName:String):
+	var target_room = load(target_room_path)
 	var new_room = target_room.instantiate()
 	current_room.queue_free()
 	get_parent().add_child(new_room)
@@ -20,4 +20,8 @@ func teleport(target_room:PackedScene, targetPositionMarkerName:String):
 	new_room.position = ROOM_POSITION
 	current_room = new_room
 	
-	$Player.position = ROOM_POSITION + new_room.get_node(targetPositionMarkerName).position
+	var target_position_node = new_room.get_node(targetPositionNodeName)
+	if target_position_node is Door:
+		$Player.position = ROOM_POSITION + target_position_node.position + target_position_node.get_node("PlayerSpawn").position
+	else:
+		$Player.position = ROOM_POSITION + target_position_node.position

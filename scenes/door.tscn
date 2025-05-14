@@ -12,5 +12,8 @@ script = ExtResource("1_hpvv5")
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_ffxv4")
 
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(8, 13)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

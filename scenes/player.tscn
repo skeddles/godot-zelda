@@ -116,3 +116,5 @@ script = ExtResource("4_dqkch")
 [node name="Stairs" type="Node" parent="State"]
 process_mode = 4
 script = ExtResource("3_qhqgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

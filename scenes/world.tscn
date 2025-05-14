@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvlhfnx1j6ijl"]
 
 [ext_resource type="Script" uid="uid://c0424ffbldcf1" path="res://scripts/world.gd" id="1_4wyf3"]
-[ext_resource type="PackedScene" uid="uid://bn4336skkdtv1" path="res://scenes/rooms/start.tscn" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://bn4336skkdtv1" path="res://scenes/rooms/starting_area.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://cllx1r6eahv3l" path="res://scenes/player.tscn" id="2_71j4m"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
@@ -18,8 +18,9 @@ normal = Vector2(-1, 0)
 [node name="World" type="Node2D"]
 script = ExtResource("1_4wyf3")
 
-[node name="Room" parent="." instance=ExtResource("1_rwgxs")]
+[node name="start" parent="." instance=ExtResource("1_rwgxs")]
 position = Vector2(0, 48)
+north_room_scene = "uid://bn6sqbu4fx7b1"
 
 [node name="Player" parent="." instance=ExtResource("2_71j4m")]
 position = Vector2(122, 146)
@@ -30,15 +31,19 @@ position = Vector2(0, 48)
 [node name="North" type="CollisionShape2D" parent="WorldBoundaries"]
 position = Vector2(-32, 8)
 shape = SubResource("WorldBoundaryShape2D_4wyf3")
+metadata/direction_prefix = &"north"
 
 [node name="East" type="CollisionShape2D" parent="WorldBoundaries"]
 position = Vector2(0, 224)
 shape = SubResource("WorldBoundaryShape2D_k0juu")
+metadata/direction_prefix = &"east"
 
 [node name="South" type="CollisionShape2D" parent="WorldBoundaries"]
 position = Vector2(-32, 192)
 shape = SubResource("WorldBoundaryShape2D_71j4m")
+metadata/direction_prefix = &"south"
 
 [node name="West" type="CollisionShape2D" parent="WorldBoundaries"]
 position = Vector2(256, 224)
 shape = SubResource("WorldBoundaryShape2D_qfnet")
+metadata/direction_prefix = &"west"

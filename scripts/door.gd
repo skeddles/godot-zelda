@@ -1,7 +1,7 @@
 extends Area2D
 class_name Door
 
-@export var target_room:PackedScene
+@export_file var target_room:String
 @export var target_marker:String = "Entrance"
 
 var overlapping_body: CharacterBody2D = null
@@ -9,13 +9,11 @@ var overlapping_body: CharacterBody2D = null
 	
 func _on_body_entered(body: Node):
 	if body is Player:
-		print('overlapping player',self)
 		overlapping_body = body
 		set_physics_process(true)
 
 func _on_body_exited(body: Node):
 	if body == overlapping_body:
-		print('left player',self)
 		overlapping_body = null
 		set_physics_process(false)
 

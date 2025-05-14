@@ -35,5 +35,6 @@ shape = SubResource("RectangleShape2D_if0sp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pooi4")
-frame_progress = 0.241449
+autoplay = "default"
+frame_progress = 0.383529
 centered = false

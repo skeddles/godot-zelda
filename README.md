@@ -18,6 +18,7 @@ Barely Started!
 - Tiles and tile collision
 - Door transitions
 - Overworld transitions
+- Textboxes
 
 ## To Do
 

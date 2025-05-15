@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvt631tesi1a2"]
+
+[ext_resource type="Script" uid="uid://cvh6hnbkyaba" path="res://scripts/text_box.gd" id="1_wscpg"]
+
+[node name="TextBox" type="Label"]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 216.0
+offset_bottom = 63.0
+text = "IT'S DANGEROUS TO GO ALONE! TAKE THIS."
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters_behavior = 1
+script = ExtResource("1_wscpg")

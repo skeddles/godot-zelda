@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b0of2vkuudqt3"]
+
+[ext_resource type="FontFile" uid="uid://b8jcw23wjo5ji" path="res://art/nintendo-nes-font.ttf" id="1_mlkpy"]
+
+[resource]
+default_font = ExtResource("1_mlkpy")
+default_font_size = 8
+Label/constants/line_spacing = 0

@@ -32,6 +32,11 @@ window/stretch/scale_mode="integer"
 
 door=""
 
+[gui]
+
+theme/custom="uid://b0of2vkuudqt3"
+theme/custom_font="uid://b8jcw23wjo5ji"
+
 [input]
 
 Left={

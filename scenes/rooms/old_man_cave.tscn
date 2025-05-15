@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://bn6sqbu4fx7b1"]
+[gd_scene load_steps=8 format=4 uid="uid://bn6sqbu4fx7b1"]
 
 [ext_resource type="Script" uid="uid://bbg1n1s60f536" path="res://scripts/room.gd" id="1_x3jfl"]
 [ext_resource type="Texture2D" uid="uid://bd0rcqbk8fifp" path="res://art/tiles.png" id="3_vmix2"]
 [ext_resource type="PackedScene" uid="uid://byqwdnyht2dwm" path="res://scenes/NPC/flame.tscn" id="4_lm2fn"]
+[ext_resource type="PackedScene" uid="uid://bvt631tesi1a2" path="res://scenes/text_box.tscn" id="5_x3jfl"]
 [ext_resource type="PackedScene" uid="uid://bbbj4dieesi8e" path="res://scenes/NPC/old_man.tscn" id="5_xbdq1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ffxv4"]
@@ -118,3 +119,5 @@ position = Vector2(120, 80)
 
 [node name="Entrance" type="Marker2D" parent="."]
 position = Vector2(128, 184)
+
+[node name="TextBox" parent="." instance=ExtResource("5_x3jfl")]

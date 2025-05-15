@@ -19,31 +19,34 @@ normal = Vector2(-1, 0)
 script = ExtResource("1_4wyf3")
 
 [node name="start" parent="." instance=ExtResource("1_rwgxs")]
-position = Vector2(0, 48)
-north_room_scene = "uid://bn6sqbu4fx7b1"
+position = Vector2(1, 64)
 
 [node name="Player" parent="." instance=ExtResource("2_71j4m")]
-position = Vector2(122, 146)
+position = Vector2(123, 162)
+motion_mode = 1
 
-[node name="WorldBoundaries" type="StaticBody2D" parent="."]
-position = Vector2(0, 48)
+[node name="WorldBoundaries" type="AnimatableBody2D" parent="."]
+position = Vector2(1, 64)
 
 [node name="North" type="CollisionShape2D" parent="WorldBoundaries"]
 position = Vector2(-32, 8)
 shape = SubResource("WorldBoundaryShape2D_4wyf3")
 metadata/direction_prefix = &"north"
 
-[node name="East" type="CollisionShape2D" parent="WorldBoundaries"]
+[node name="West" type="CollisionShape2D" parent="WorldBoundaries"]
 position = Vector2(0, 224)
 shape = SubResource("WorldBoundaryShape2D_k0juu")
-metadata/direction_prefix = &"east"
+metadata/direction_prefix = &"west"
 
 [node name="South" type="CollisionShape2D" parent="WorldBoundaries"]
-position = Vector2(-32, 192)
+position = Vector2(-33, 176)
 shape = SubResource("WorldBoundaryShape2D_71j4m")
 metadata/direction_prefix = &"south"
 
-[node name="West" type="CollisionShape2D" parent="WorldBoundaries"]
+[node name="East" type="CollisionShape2D" parent="WorldBoundaries"]
 position = Vector2(256, 224)
 shape = SubResource("WorldBoundaryShape2D_qfnet")
-metadata/direction_prefix = &"west"
+metadata/direction_prefix = &"east"
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0

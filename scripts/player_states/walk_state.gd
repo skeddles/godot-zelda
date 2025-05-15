@@ -29,6 +29,8 @@ func check_for_collisions():
 
 
 func world_boundary_collision(collision, collider):
+	if player.velocity == Vector2.ZERO: return
+	
 	var collider_shape_index = collision.get_collider_shape_index()
 	var direction_boundary = collider.shape_owner_get_owner(collider_shape_index)
 	var direction = direction_boundary.get_meta("direction_prefix")
@@ -40,4 +42,4 @@ func world_boundary_collision(collision, collider):
 		if teleport_target:
 			player.world.teleport(target_room, teleport_target)
 		else:
-			print("sliding transitions not yet implimented")
+			player.world.transition(target_room, direction)

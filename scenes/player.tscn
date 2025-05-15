@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cllx1r6eahv3l"]
+[gd_scene load_steps=16 format=3 uid="uid://cllx1r6eahv3l"]
 
 [ext_resource type="Script" uid="uid://ccd01cmxpbx5u" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bj3m87vj75bj2" path="res://art/elf.png" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://dy8wy2fa63ymi" path="res://scripts/player_states/stair-state.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://bte8v8u25pebx" path="res://scripts/player_states/walk_state.gd" id="4_dqkch"]
+[ext_resource type="Script" uid="uid://d4gm4y8l8igek" path="res://scripts/player_states/transitioning_state.gd" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -116,5 +117,8 @@ script = ExtResource("4_dqkch")
 [node name="Stairs" type="Node" parent="State"]
 process_mode = 4
 script = ExtResource("3_qhqgy")
+
+[node name="Transitioning" type="Node" parent="State"]
+script = ExtResource("5_qlg0r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

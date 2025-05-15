@@ -20,14 +20,14 @@ normal = Vector2(-1, 0)
 script = ExtResource("1_4wyf3")
 
 [node name="start" parent="." instance=ExtResource("1_rwgxs")]
-position = Vector2(1, 64)
+position = Vector2(0, 64)
 
 [node name="Player" parent="." instance=ExtResource("2_71j4m")]
 position = Vector2(123, 162)
 motion_mode = 1
 
 [node name="WorldBoundaries" type="AnimatableBody2D" parent="."]
-position = Vector2(1, 64)
+position = Vector2(0, 64)
 
 [node name="North" type="CollisionShape2D" parent="WorldBoundaries"]
 position = Vector2(-32, 8)

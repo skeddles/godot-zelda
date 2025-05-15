@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvlhfnx1j6ijl"]
+[gd_scene load_steps=9 format=3 uid="uid://cvlhfnx1j6ijl"]
 
 [ext_resource type="Script" uid="uid://c0424ffbldcf1" path="res://scripts/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bn4336skkdtv1" path="res://scenes/rooms/starting_area.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://cllx1r6eahv3l" path="res://scenes/player.tscn" id="2_71j4m"]
+[ext_resource type="PackedScene" uid="uid://cfok08kkeuqdt" path="res://scenes/gui.tscn" id="4_k0juu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
 normal = Vector2(0, 1)
@@ -50,3 +51,5 @@ metadata/direction_prefix = &"east"
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="GUI" parent="." instance=ExtResource("4_k0juu")]

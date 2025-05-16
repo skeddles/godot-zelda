@@ -2,16 +2,26 @@ extends State
 
 @onready var SPEED = player.SPEED
 
+var direction = "down"
+
+
+func start():
+	%Sprite.play("walk_"+direction)
+	%Sprite.stop()
+
+
 func _physics_process(_delta):
 	var horizontal = Input.get_axis("Left", "Right")
 	var vertical = Input.get_axis("Up", "Down")
 	
 	if vertical:
 		player.velocity = Vector2(0,vertical * SPEED)
-		animate("walk", "vertical", vertical)
+		direction = DIRECTION["vertical"][vertical]
+		%Sprite.play("walk_"+direction)
 	elif horizontal:
 		player.velocity = Vector2(horizontal * SPEED, 0)
-		animate("walk", "horizontal", horizontal)
+		direction = DIRECTION["horizontal"][horizontal]
+		%Sprite.play("walk_"+direction)
 	else: 
 		player.velocity = Vector2.ZERO
 		%Sprite.stop()

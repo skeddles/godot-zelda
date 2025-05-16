@@ -1,10 +1,24 @@
-[gd_scene load_steps=16 format=3 uid="uid://cllx1r6eahv3l"]
+[gd_scene load_steps=21 format=3 uid="uid://cllx1r6eahv3l"]
 
 [ext_resource type="Script" uid="uid://ccd01cmxpbx5u" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bpcuq1owr81yb" path="res://art/items.png" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://bj3m87vj75bj2" path="res://art/elf.png" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://dy8wy2fa63ymi" path="res://scripts/player_states/stair-state.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://bte8v8u25pebx" path="res://scripts/player_states/walk_state.gd" id="4_dqkch"]
 [ext_resource type="Script" uid="uid://d4gm4y8l8igek" path="res://scripts/player_states/transitioning_state.gd" id="5_qlg0r"]
+[ext_resource type="Script" uid="uid://x7vejg8jq6ah" path="res://scripts/player_states/got_item_state.gd" id="6_tuyoq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(1, 1, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(18, 69, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(1, 69, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -40,6 +54,22 @@ region = Rect2(18, 35, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}],
+"loop": true,
+"name": &"got_item",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}],
+"loop": true,
+"name": &"got_weapon",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dqkch")
@@ -91,6 +121,10 @@ size = Vector2(10, 7)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
+[node name="HeldWeaponSprite" type="Sprite2D" parent="."]
+position = Vector2(-4, -22)
+texture = SubResource("AtlasTexture_d2wvv")
+
 [node name="Mask" type="ColorRect" parent="."]
 clip_children = 1
 offset_left = -8.0
@@ -102,7 +136,7 @@ color = Color(1, 0, 1, 1)
 [node name="Sprite" type="AnimatedSprite2D" parent="Mask"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"walk_up"
+animation = &"got_weapon"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -121,4 +155,5 @@ script = ExtResource("3_qhqgy")
 [node name="Transitioning" type="Node" parent="State"]
 script = ExtResource("5_qlg0r")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="GotItem" type="Node" parent="State"]
+script = ExtResource("6_tuyoq")

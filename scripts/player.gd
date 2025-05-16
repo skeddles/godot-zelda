@@ -11,6 +11,7 @@ func _ready():
 	for state in $State.get_children():
 		state.process_mode = Node.PROCESS_MODE_DISABLED
 	change_state("Walk")
+	$HeldWeaponSprite.visible = false
 
 func change_state(state_name):
 	if state: 

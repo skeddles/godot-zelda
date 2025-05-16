@@ -9,7 +9,8 @@ func _ready():
 	$Sprite.texture = texture
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(player: Player) -> void:
 	if related_npc:
 		related_npc.disappear()
 		visible = false
+		player.change_state("GotItem")

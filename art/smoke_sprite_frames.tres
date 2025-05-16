@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://ckxjqjeb632dl"]
+
+[ext_resource type="Texture2D" uid="uid://fgccshdyl64d" path="res://art/smoke.png" id="1_570va"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiaks"]
+atlas = ExtResource("1_570va")
+region = Rect2(1, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va1sj"]
+atlas = ExtResource("1_570va")
+region = Rect2(18, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6le0"]
+atlas = ExtResource("1_570va")
+region = Rect2(35, 1, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiaks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va1sj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6le0")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 10.0
+}]

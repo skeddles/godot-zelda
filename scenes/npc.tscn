@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://byqwdnyht2dwm"]
+
+[ext_resource type="Script" uid="uid://b6k2tx46cttja" path="res://scripts/npc.gd" id="1_cy6d8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if0sp"]
+size = Vector2(16, 16)
+
+[node name="NPC" type="StaticBody2D"]
+script = ExtResource("1_cy6d8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_if0sp")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+centered = false
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

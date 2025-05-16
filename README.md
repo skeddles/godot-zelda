@@ -19,6 +19,7 @@ Barely Started!
 - Door transitions
 - Overworld transitions
 - Textboxes
+- NPC spawn animation
 
 ## To Do
 
@@ -64,4 +65,8 @@ Set the nearby maps by clicking on the root node and set the room scenes under N
 
 Add a door by dragging `res://scenes/door.tscn` into the scene. Set the target room by clicking on the root node and set its `target_room` and `target_marker` properties.
 
-Drag NPCs from `res://scenes/NPC` into the scene.
+#### Adding NPCs
+
+1. Drag an NPC from `res://scenes/npc.tsc` into the room
+2. Create a sprite_frames resource in the inspector
+3. Add frames to the `default` animation in the sprite frames

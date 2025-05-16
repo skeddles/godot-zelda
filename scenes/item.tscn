@@ -13,3 +13,5 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_s8enn")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

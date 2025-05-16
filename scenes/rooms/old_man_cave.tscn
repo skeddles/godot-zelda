@@ -183,6 +183,7 @@ position = Vector2(128, 184)
 
 [node name="TextBox" parent="." instance=ExtResource("5_x3jfl")]
 
-[node name="Item" parent="." instance=ExtResource("7_vmix2")]
+[node name="Item" parent="." node_paths=PackedStringArray("related_npc") instance=ExtResource("7_vmix2")]
 position = Vector2(128, 112)
+related_npc = NodePath("../OldMan")
 texture = SubResource("AtlasTexture_lm2fn")

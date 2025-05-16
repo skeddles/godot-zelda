@@ -4,7 +4,7 @@ class_name NPC
 
 @onready var default_sprite_frames:SpriteFrames = load("res://art/smoke_sprite_frames.tres")
 
-
+var disappearing_start_time:int
 
 func _ready():
 	if not Engine.is_editor_hint():
@@ -26,3 +26,13 @@ func _on_sprite_animation_finished():
 		else:
 			visible = false
 			print("Warning: sprite \"", name, "\" does not have Sprite Frames defined!")
+
+func _process(_delta):
+	if disappearing_start_time:
+		var time_since_started = Time.get_ticks_msec() - disappearing_start_time
+		visible = time_since_started % 50 > 25
+		if time_since_started > 1000:
+			queue_free()
+
+func disappear():
+	disappearing_start_time = Time.get_ticks_msec()

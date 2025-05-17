@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cfok08kkeuqdt"]
+[gd_scene load_steps=2 format=3 uid="uid://cfok08kkeuqdt"]
+
+[ext_resource type="PackedScene" uid="uid://cih3u8gs610pd" path="res://scenes/gui/item_slot.tscn" id="1_efmwq"]
 
 [node name="GUI" type="CanvasLayer"]
 
@@ -6,3 +8,11 @@
 offset_right = 256.0
 offset_bottom = 64.0
 color = Color(0, 0, 0, 1)
+
+[node name="ItemSlotB" parent="." instance=ExtResource("1_efmwq")]
+position = Vector2(138, 21)
+use_key = "B"
+
+[node name="ItemSlotA" parent="." instance=ExtResource("1_efmwq")]
+position = Vector2(164, 21)
+use_key = "A"

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cih3u8gs610pd"]
+
+[ext_resource type="Script" uid="uid://b7w3hwplshod5" path="res://scripts/gui/item_slot.gd" id="1_51xr0"]
+[ext_resource type="Texture2D" uid="uid://c6ktst4eu65et" path="res://art/item_slot.png" id="1_oqbmx"]
+
+[node name="ItemSlot" type="Node2D"]
+script = ExtResource("1_51xr0")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_oqbmx")
+centered = false
+
+[node name="UseKey" type="Label" parent="."]
+offset_left = 5.0
+offset_right = 13.0
+offset_bottom = 8.0
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+position = Vector2(5, 8)
+centered = false

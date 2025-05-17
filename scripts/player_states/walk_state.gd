@@ -18,10 +18,12 @@ func _physics_process(_delta):
 		player.velocity = Vector2(0,vertical * SPEED)
 		direction = DIRECTION["vertical"][vertical]
 		%Sprite.play("walk_"+direction)
+		player.position.x = round(player.position.x/8.0) * 8.0
 	elif horizontal:
 		player.velocity = Vector2(horizontal * SPEED, 0)
 		direction = DIRECTION["horizontal"][horizontal]
 		%Sprite.play("walk_"+direction)
+		player.position.y = round(player.position.y/8.0) * 8.0
 	else: 
 		player.velocity = Vector2.ZERO
 		%Sprite.stop()
